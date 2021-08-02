@@ -9,6 +9,8 @@ import Foundation
 
 extension Tester {
     /// Creating a git conflict
+    /// Adding comment
+    ///
     /// Using print command
     func printWord(word: String) {
 
