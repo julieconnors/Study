@@ -9,12 +9,14 @@ import Foundation
 
 extension Tester {
     /// Creating a git conflict
+    /// Adding comment
+    ///
     /// Using print command
     func printWord(word: String) {
 
     }
     
-    /// input "hello" should print "Hello"
+    /// input "hello" should print "HELLO"
     func printUpperCase(word: String) {
 
     }
