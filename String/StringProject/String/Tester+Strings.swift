@@ -16,7 +16,7 @@ extension Tester {
 
     }
     
-    /// input "hello" should print "Hello"
+    /// input "hello" should print "HELLO"
     func printUpperCase(word: String) {
 
     }
