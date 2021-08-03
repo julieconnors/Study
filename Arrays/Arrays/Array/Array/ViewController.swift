@@ -1,19 +1,17 @@
 //
 //  ViewController.swift
-//  String
+//  Array
 //
-//  Created by Luat on 8/2/21.
+//  Created by Luat on 5/19/21.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
 
-    let tester = Tester.shared
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
     }
 
 
