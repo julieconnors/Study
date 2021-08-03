@@ -9,20 +9,17 @@ import Foundation
 
 extension Tester {
     /// Creating a git conflict
+    /// Adding comment
+    ///
     /// Using print command
     func printWord(word: String) {
         print(word)
     }
     
-    /// input "hello" should print "Hello"
+    /// input "hello" should print "HELLO"
     func printUpperCase(word: String) {
-        var newWord: String = ""
-
-        for char in word {
-            newWord += char.uppercased()
-        }
-        
-        print(newWord)
+        print(word.uppercased())
+//        word.capitalized
     }
     
     /// Using for loop, print each char in word
@@ -32,7 +29,7 @@ extension Tester {
         }
     }
     
-    /// Using for-in-enumerated(), print odd-index chars in word
+    /// Using for-in-enumerated(), print odd-position chars in word
     func printOddCharsEnumerated(word: String) {
         for (index, char) in word.enumerated() {
             if index % 2 == 0 {
@@ -41,13 +38,13 @@ extension Tester {
         }
     }
     
-    /// Using for-in-stride and string.index, print odd-index chars in word
+    /// Using for-in-stride and string.index, print odd-position chars in word
     func printOddCharsStrideIndex(word: String) {
-        let firstIndex = word.startIndex
-        
-        for char in stride (from: 0, to: word.count, by: 2) {
-            let letterIndex = word.index(firstIndex, offsetBy: char)
-            print(word[letterIndex])
+        let startIndex = word.startIndex
+        for distance in stride(from: 0, to: word.count, by: 2) {
+            let nextIndex = word.index(startIndex, offsetBy: distance)
+            let letter = word[nextIndex]
+            print(letter)
         }
     }
     
@@ -60,23 +57,21 @@ extension Tester {
      one -> oneyay
      */
     func printPigLatin(word: String) {
-        let firstIndex = word.startIndex
-        let firstLetter = word[firstIndex]
-        print(word[firstIndex])
-        if ["a", "e", "i", "o", "u"].contains(word[firstIndex]) {
-            print(word + "yay")
-        } else {
-            var newWord = word
-            newWord.removeFirst()
-            newWord.append(firstLetter)
-            print(newWord + "ay")
-        }
+        
     }
     
     /// Using loop and string.index, returns true if input is a palindrome
     func isPalindrome(word: String) -> Bool {
-        let reverse = String(word.reversed())
-        
-        return reverse == word ? true : false
+        let startIndex = word.startIndex
+//        let endIndex = word.endIndex // out of bounds
+        let size = word.count
+        for num in 0...size/2 {
+            let leftIndex = word.index(startIndex, offsetBy: num)
+            let rightIndex = word.index(startIndex, offsetBy: size - num - 1 )
+            if word[leftIndex] != word[rightIndex] {
+                return false
+            }
+        }
+        return true
     }
 }
