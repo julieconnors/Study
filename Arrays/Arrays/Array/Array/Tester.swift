@@ -22,7 +22,14 @@ class Tester {
     func lastHalf(array: [Int]) -> [Int] {
         let toPlay = array
         let size = array.count
-        let half = size/2 + 1
+        var half = 0
+        if size % 2 == 0{
+            half = size/2
+        }
+        else{
+            half = size/2 + 1
+        }
+        
         let back = Array(toPlay[half...])
         
         return back
@@ -106,7 +113,9 @@ class Tester {
                 fullSeats += 1
             }
         }
-        return (fullSeats - emptySeats) + 1
+        //is the test correct? shouldn't it be 2?
+        let lukeModifier = 1
+        return (fullSeats - emptySeats) + lukeModifier
     }
     
     /// 8. Pig latin but with words separated by spaces
