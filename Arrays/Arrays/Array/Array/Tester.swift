@@ -12,7 +12,6 @@ class Tester {
     
     /// 1. Write a function that takes an array of numbers and returns an array with each of the numbers multiplied by 2
     func multiplyByTwo(numbers original: [Int]) -> [Int]{
-
         return original.map { $0 * 2 }
     }
 
@@ -129,8 +128,9 @@ class Tester {
         9. Find the best day to first BUY and then a day occuring after that day to SELL. Return the maximum profit (buy price - sell price)
         var prices = [7,1,5,3,6,4] -> returns 5
      */
+    
+    
     func maxProfit(array: [Int]) -> Int {
-        
         var min = array[0]
         var maxDiff = 0
         for price in array {
