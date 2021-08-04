@@ -51,6 +51,3 @@ for num in 0..<greeting.count {
 }
 
 
-
-
-

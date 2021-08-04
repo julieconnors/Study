@@ -57,7 +57,18 @@ extension Tester {
      one -> oneyay
      */
     func printPigLatin(word: String) {
+<<<<<<< HEAD
         
+=======
+        let vowels = "aeiou"
+        let firstLetter = String(word[word.startIndex])
+        if vowels.contains(firstLetter) {
+            print(word + "yay")
+        } else {
+            let truncWord = word.dropFirst()
+            print(truncWord + firstLetter + "ay")
+        }
+>>>>>>> 58dbcea37e050a7b1c2bcff30007e3fe0dbd6a91
     }
     
     /// Using loop and string.index, returns true if input is a palindrome

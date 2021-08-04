@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  Array
+//  SetDictionaryProject
 //
-//  Created by Luat on 5/19/21.
+//  Created by Luat on 8/4/21.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Tester.shared.maxProfit(array: [7,1,2,3,4,5,6,10, 100])
+        // Do any additional setup after loading the view.
     }
 
 

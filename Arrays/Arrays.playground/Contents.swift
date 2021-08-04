@@ -5,6 +5,7 @@ var greeting = "Hello, playground"
 
 func testing() {
     let moneyLeft = 2
+<<<<<<< HEAD
 
     if moneyLeft > 5 {
 
@@ -17,6 +18,21 @@ func testing() {
         return print("outta money")
     }
 
+=======
+    
+    if moneyLeft > 5 {
+        
+    } else {
+        
+    }
+    print("after if statment")
+    
+    guard moneyLeft > 5 else {
+        print("outta money")
+        return
+    }
+    
+>>>>>>> 58dbcea37e050a7b1c2bcff30007e3fe0dbd6a91
     print("after guard statment")
 }
 testing()
@@ -35,8 +51,9 @@ print("int8 max", Int8.max)
 print("int16 max", Int16.max)
 
 
-let doub: Double = 10.0
-let float: Float = 10.0
+
+let doub: Double = 10.0 // 64 bits
+let float: Float = 10.0 // 32 bits
 
 let xPostion: CGFloat = 10.0
 
@@ -72,7 +89,5 @@ let reduced = intArr.reduce(1) { total, element in
     return total * element
 }
 print(reduced)
-
-
 
 
