@@ -172,7 +172,22 @@ class Tester {
         [1, 4, 8, 4] -> [1, 2, 3, 2]
      */
     func reduceDistanceKeepPriority(array: [Int]) -> [Int] {
+        var priority: Int = 1
+
+        var reducedArray: [Int] = [1]
         
-        return []
+        var index = 0
+        while index < array.count - 1 {
+            if array[index] < array[index + 1] {
+                priority += 1
+                reducedArray.append(priority)
+            } else if array[index] > array[index + 1] {
+                priority -= 1
+                reducedArray.append(priority)
+            }
+            index += 1
+        }
+        
+        return reducedArray
     }
 }
