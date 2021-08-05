@@ -6,7 +6,7 @@ import UIKit
 //let newChar = Character(UnicodeScalar(codeValue + 1)!)
 
 class Cat {
-//    static let species = "Feline"
+    //    static let species = "Feline"
     func meow() {
         print("meow")
     }
@@ -93,7 +93,7 @@ class Employee: Person {
     
     init(job: String, name: String) {
         self.job = job
-//        super.init()
+        //        super.init()
         super.init(name: name, age: 10)
     }
     
