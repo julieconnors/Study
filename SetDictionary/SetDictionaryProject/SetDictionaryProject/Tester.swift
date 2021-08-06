@@ -90,21 +90,18 @@ struct Tester {
     
     /// O(n) time: avoid nested for loops
     func findPairs(nums: [Int]) -> Int {
-        let max = nums.count
-        var numSet: Set<Int> = []
-        
+        var negativeNums: [Int] = []
         for num in nums {
             if num < 0 {
-                let postiveNum = num * -1
-                numSet.insert(postiveNum)
-            } else {
-                numSet.insert(num)
+                negativeNums.append(num)
             }
         }
-        let min = numSet.count
-        let numberOfPairs = max - min
-
-        return numberOfPairs
+        
+        var pairs: [Int] = []
+        for num in negativeNums {
+            pairs += nums.filter{$0 + num == 0}
+        }
+        return pairs.count
     }
     
     /**
@@ -114,25 +111,36 @@ struct Tester {
      [1, 4, 8, 1] -> [1, 2, 3, 1]
      */
     func reduceDistanceKeepPriority(array: [Int]) -> [Int] {
-        let sorted = array.sorted()
-        let max = array.max() ?? 0
+        let sorted: [Int] = array.sorted()
+        let priority: Int = array.min() ?? 0
+        
+        var dict: [Int: Int] = [:]
 
-        var priorities: [Int] = Array(repeating: -1, count: max + 1)
-        var priority = 0
-        for num in sorted {
-            if priorities[num] == -1 {
-                priority += 1
+        if priority != 1 {
+            for (index, ele) in sorted.enumerated() {
+                if ele == priority {
+                    dict[ele] = 1
+            } else {
+                dict[ele] = index + 1
+                }
             }
-            priorities[num] = priority
+        } else {
+            for (index, ele) in array.enumerated() {
+                if ele == priority {
+                    dict[ele] = 1
+                } else {
+                    dict[ele] = index + 1
+                }
+            }
         }
         
-        var result: [Int] = []
-        for num in array {
-            let newPriority = priorities[num]
-                result.append(newPriority)
-            }
+        var toReturn: [Int] = []
+        for ele in array {
+            let unwrapped: Int = dict[ele] ?? 0
+            toReturn.append(unwrapped)
+        }
         
-        return result
+        return toReturn
     }
     
     /// Optionals
@@ -213,5 +221,6 @@ struct Tester {
         let unwrapped: Int = implicitUnwrapped
         return unwrapped
     }
-    
 }
+
+
