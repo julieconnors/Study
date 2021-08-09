@@ -81,3 +81,42 @@ let tom = Person(phone: galaxy8)
 let tam = Person(phone: fakePhone)
 tam.phone.downloadApp(app: "Angry birds")
 
+/// 1. Depending on a protocol (more abstract, flexible)
+///     - remove tightly coupled dependency
+/// 2. Only exposing one function that's requried
+
+protocol TeacherProtocol {
+    func answerQuestion(num: Int) -> Bool
+}
+
+struct Teacher: TeacherProtocol {
+    func answerQuestion(num: Int) -> Bool {
+        if num == 42 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func gradePapers() {
+        
+    }
+}
+
+struct Student {
+    var teacher: TeacherProtocol?
+    
+    func doAssignment() {
+        if let answer = teacher?.answerQuestion(num: 42),
+           answer == true {
+            print("answer given true")
+        } else {
+            print("default value here")
+        }
+    }
+}
+
+let teacher = Teacher()
+var bob = Student()
+bob.teacher = teacher
+bob.doAssignment()
