@@ -68,7 +68,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .cyan
+        print("here")
         setupTasks()
         setupTeam()
         myTeam.startWeek()
