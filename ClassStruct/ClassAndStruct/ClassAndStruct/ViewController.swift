@@ -68,35 +68,39 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .cyan
         setupTasks()
         setupTeam()
         myTeam.startWeek()
-//        myTeam.allTasksCompleted()
 
+        myTeam.weeksTillComplete()
+        
         if myTeam.allTasksCompleted() {
             myTeam.printMoney()
         }
     }
     
     func setupTasks() {
-//        let iOSTask     = Task(timeReq: 20,
-//                               roleReq: .iOSDeveloper)
-//        let androidTask = Task(timeReq: 30,
-//                               roleReq: .AndroidDeveloper)
-//
-//        myTeam.add(task: iOSTask)
-//        myTeam.add(task: androidTask)
+        let longTask = Task(timeReq: 70, roleReq: .iOSDeveloper)
+
+        let iOSTask     = Task(timeReq: 10,
+                               roleReq: .iOSDeveloper)
+                              roleReq: .AndroidDeveloper)
+
+        myTeam.add(task: iOSTask)
+        myTeam.add(task: iOSTask)
+        myTeam.add(task: longTask)
+
     }
     
     func setupTeam() {
-//        let iOSDev      = Employee(role: .iOSDeveloper,
-//                                   payRate: .normal)
-//        let androidDev  = Employee(role: .AndroidDeveloper,
-//                                   payRate: .low)
-//
-//        myTeam.add(employee: iOSDev)
-//        myTeam.add(employee: androidDev)
+        let iOSDev      = Employee(role: .iOSDeveloper,
+                                   payRate: .normal)
+        let androidDev  = Employee(role: .AndroidDeveloper,
+                                   payRate: .low)
+
+        myTeam.add(employee: iOSDev)
+        myTeam.add(employee: androidDev)
     }
     
 }

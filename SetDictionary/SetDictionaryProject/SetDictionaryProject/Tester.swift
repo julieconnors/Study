@@ -89,6 +89,23 @@ struct Tester {
             pairs += nums.filter{$0 + num == 0}
         }
         return pairs.count
+//        var counter = 0
+//        var dictionary = [String: Int]()
+//
+//        nums.forEach { num in
+//            let transformedNum = abs(num)
+//            let key = String(transformedNum)
+//
+//            if let _ = dictionary[key] {
+//                counter += 1
+//                dictionary.removeValue(forKey: key)
+//            } else {
+//                dictionary[key] = transformedNum
+//            }
+//
+//        }
+//
+//        return counter
     }
     
     /**
@@ -117,6 +134,36 @@ struct Tester {
             toReturn.append(unwrapped)
         }
         
+//        let sorted: [Int] = array.sorted()
+//        let priority: Int = array.min() ?? 0
+//
+//        var dict: [Int: Int] = [:]
+//
+//        if priority != 1 {
+//            for (index, ele) in sorted.enumerated() {
+//                if ele == priority {
+//                    dict[ele] = 1
+//                } else {
+//                    dict[ele] = index + 1
+//                }
+//            }
+//        } else {
+//            for (index, ele) in array.enumerated() {
+//                if ele == priority {
+//                    dict[ele] = 1
+//                } else {
+//                    dict[ele] = index + 1
+//                }
+//            }
+//        }
+//        print(array)
+//        print(dict)
+//        var toReturn: [Int] = []
+//        for ele in array {
+//            let unwrapped: Int = dict[ele] ?? 0
+//            toReturn.append(unwrapped)
+//        }
+//        print(toReturn)
         return toReturn
     }
     

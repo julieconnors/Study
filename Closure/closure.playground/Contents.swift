@@ -38,5 +38,3 @@ let modifiedNums = doMath(arr: originalNums) { num in return num + 10
 //let modifiedNums = doMath(arr: originalNums, mathClosure: addTenClosure)
 print(modifiedNums)
 
-
-

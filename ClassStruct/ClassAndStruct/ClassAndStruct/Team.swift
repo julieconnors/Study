@@ -23,9 +23,19 @@ class Team {
     
     func startWeek() {
         for (index, _) in self.taskList.enumerated() {
-            validate(taskNum: index)
+            employees.append(employee)
         }
     }
+    
+    func add(task: Task) {
+        taskList.append(task)
+    }
+    
+//    func startWeek() {
+//        for index in 0..<taskList.count {
+//            validate(taskNum: index)
+//        }
+//    }
     
     func validate(taskNum: Int) {
         let taskToValidate = self.taskList[taskNum]
@@ -39,6 +49,16 @@ class Team {
         if validEmployees.count > 0 {
             assign(taskNum: taskNum, to: validEmployees[0])
         }
+//        let task = taskList[taskNum]
+//        for employee in employees {
+//            if employee.role == task.roleReq {
+//                taskList[taskNum].isValid = true
+//                assign(taskNum: taskNum, to: employee)
+//                break
+//            } else {
+//                taskList[taskNum].isValid = false
+//            }
+//        }
     }
     
     func assign(taskNum: Int, to employee: Employee) {
@@ -52,6 +72,7 @@ class Team {
             }
         }
         return true
+//        taskList.filter { $0.isComplete }.count == taskList.count
     }
     
     func weeksTillComplete() -> Int {
@@ -62,16 +83,19 @@ class Team {
                 hoursTotal[task.roleReq] = hours + task.timeReq
             } else {
                 hoursTotal[task.roleReq] = task.timeReq
+
                 }
             }
-
+        
         let hoursMax = hoursTotal.values.max() ?? 0
         let weeks = (Double(hoursMax) / 40).rounded(.up)
+      
         return Int(weeks)
-        
-        
-        
-        
+    }
+    
+    
+//    my weeksTillComplete
+    
 //        var validTasks: [Task] = []
 //        var employeesAvailable: [Role: [Employee]] = [:]
 //        var validEmployeeHoursWorked: [Role: Int] = [:]
@@ -82,20 +106,20 @@ class Team {
 //4. count employee hours worked
 //5. count task hours required for each valid task
 //6. calculate weeks of work remaining depending on task timeReq and employee hoursWorked in a 40 hour week
-        
+    
 ///1.
 //        for task in self.taskList {
 //            if task.isValid {
 //                validTasks.append(task)
 //            }
 //        }
-        
+    
 ///2.
 //        if validTasks.isEmpty {
 //            weeksLeft = 1
 //            self.startWeek()
 //        }
-        
+    
 ///3.
 //        var totalTaskTime: Int = 0
 //        for task in validTasks {
@@ -108,7 +132,7 @@ class Team {
 //
 //            totalTaskTime /= value
 //        }
-        
+    
 ///4.
 //        for (key, value) in employeesAvailable {
 //            print(key, value)
@@ -118,10 +142,10 @@ class Team {
 //                validEmployeeHoursWorked[key] = hours
 //            }
 //        }
-        
+    
 //        print("employee hours worked", validEmployeeHoursWorked)
 //        var roleHoursRemaining: [Role: Int] = [:]
-        
+    
 ///5.
 //        for (key, value) in validEmployeeHoursWorked {
 //
@@ -132,7 +156,7 @@ class Team {
 //            }
 //        }
 //        print(roleHoursRemaining)
-        
+    
 ///6.
 //        for (_, value) in roleHoursRemaining {
 //            if value > 40 && value % 40 != 0 {
@@ -144,14 +168,10 @@ class Team {
 //
 //        print("weeks left", weeksLeft)
 //        return weeksLeft
-    }
 
     func printMoney() {
         if allTasksCompleted(){
             print("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
         }
     }
-    
 }
-
-

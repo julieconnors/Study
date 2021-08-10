@@ -35,3 +35,17 @@ class Employee {
         }
     }
 }
+
+//        if task.timeReq + hoursWorked > 40 {
+//            let hoursDone = 40 - hoursWorked
+//            addToHoursWorked(hours: hoursDone)
+//            let timeLeft = task.timeReq - hoursDone
+//            task.setTimeReq(timeLeft: timeLeft)
+//        } else {
+//            let hoursDone = task.timeReq
+//            addToHoursWorked(hours: hoursDone)
+//            task.setTimeReq(timeLeft: 0)
+//            task.setIsComplete(status: true)
+//        }
+
+

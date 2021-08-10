@@ -8,6 +8,8 @@ let arr = [1, 1, 2, 3, 4]
 var mySet: Set<Int> = [1,1,2,3,4]
 var myEmptySet: Set<Int> = []
 //print(mySet.first)
+mySet[mySet.startIndex]
+
 var myTenSet: Set<Int> = [1, 10,11,12]
 print("count: ", mySet.count)
 

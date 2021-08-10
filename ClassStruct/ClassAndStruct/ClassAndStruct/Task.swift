@@ -15,14 +15,14 @@ struct Task {
     var isComplete: Bool = false
     
     mutating func setIsComplete(status: Bool) {
-        self.isComplete = status
+        isComplete = status
     }
     
     mutating func setIsValid(status: Bool) {
-        self.isValid = status
+        isValid = status
     }
     
     mutating func setTimeReq(timeLeft: Int) {
-        self.timeReq = timeLeft
+        timeReq = timeLeft
     }
 }
