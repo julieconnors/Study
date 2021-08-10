@@ -14,18 +14,11 @@
 		9E5C0C1A26C2B0AB00F2ADB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E5C0C1926C2B0AB00F2ADB5 /* Assets.xcassets */; };
 		9E5C0C1D26C2B0AB00F2ADB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5C0C1B26C2B0AB00F2ADB5 /* LaunchScreen.storyboard */; };
 		9E5C0C2826C2B0AB00F2ADB5 /* enumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C0C2726C2B0AB00F2ADB5 /* enumsTests.swift */; };
-		9E5C0C3326C2B0AB00F2ADB5 /* enumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C0C3226C2B0AB00F2ADB5 /* enumsUITests.swift */; };
+		9E5C0C4226C2B0DA00F2ADB5 /* TemperatureScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5C0C4126C2B0DA00F2ADB5 /* TemperatureScale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		9E5C0C2426C2B0AB00F2ADB5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9E5C0C0526C2B0AA00F2ADB5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9E5C0C0C26C2B0AA00F2ADB5;
-			remoteInfo = enums;
-		};
-		9E5C0C2F26C2B0AB00F2ADB5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9E5C0C0526C2B0AA00F2ADB5 /* Project object */;
 			proxyType = 1;
@@ -46,9 +39,7 @@
 		9E5C0C2326C2B0AB00F2ADB5 /* enumsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = enumsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E5C0C2726C2B0AB00F2ADB5 /* enumsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumsTests.swift; sourceTree = "<group>"; };
 		9E5C0C2926C2B0AB00F2ADB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E5C0C2E26C2B0AB00F2ADB5 /* enumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = enumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E5C0C3226C2B0AB00F2ADB5 /* enumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = enumsUITests.swift; sourceTree = "<group>"; };
-		9E5C0C3426C2B0AB00F2ADB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E5C0C4126C2B0DA00F2ADB5 /* TemperatureScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +57,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E5C0C2B26C2B0AB00F2ADB5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +65,6 @@
 			children = (
 				9E5C0C0F26C2B0AA00F2ADB5 /* enums */,
 				9E5C0C2626C2B0AB00F2ADB5 /* enumsTests */,
-				9E5C0C3126C2B0AB00F2ADB5 /* enumsUITests */,
 				9E5C0C0E26C2B0AA00F2ADB5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +74,6 @@
 			children = (
 				9E5C0C0D26C2B0AA00F2ADB5 /* enums.app */,
 				9E5C0C2326C2B0AB00F2ADB5 /* enumsTests.xctest */,
-				9E5C0C2E26C2B0AB00F2ADB5 /* enumsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,13 +81,9 @@
 		9E5C0C0F26C2B0AA00F2ADB5 /* enums */ = {
 			isa = PBXGroup;
 			children = (
-				9E5C0C1026C2B0AA00F2ADB5 /* AppDelegate.swift */,
-				9E5C0C1226C2B0AA00F2ADB5 /* SceneDelegate.swift */,
 				9E5C0C1426C2B0AA00F2ADB5 /* ViewController.swift */,
-				9E5C0C1626C2B0AA00F2ADB5 /* Main.storyboard */,
-				9E5C0C1926C2B0AB00F2ADB5 /* Assets.xcassets */,
-				9E5C0C1B26C2B0AB00F2ADB5 /* LaunchScreen.storyboard */,
-				9E5C0C1E26C2B0AB00F2ADB5 /* Info.plist */,
+				9E5C0C4126C2B0DA00F2ADB5 /* TemperatureScale.swift */,
+				9E5C0C4026C2B0B000F2ADB5 /* Supporting */,
 			);
 			path = enums;
 			sourceTree = "<group>";
@@ -119,13 +97,17 @@
 			path = enumsTests;
 			sourceTree = "<group>";
 		};
-		9E5C0C3126C2B0AB00F2ADB5 /* enumsUITests */ = {
+		9E5C0C4026C2B0B000F2ADB5 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				9E5C0C3226C2B0AB00F2ADB5 /* enumsUITests.swift */,
-				9E5C0C3426C2B0AB00F2ADB5 /* Info.plist */,
+				9E5C0C1026C2B0AA00F2ADB5 /* AppDelegate.swift */,
+				9E5C0C1226C2B0AA00F2ADB5 /* SceneDelegate.swift */,
+				9E5C0C1626C2B0AA00F2ADB5 /* Main.storyboard */,
+				9E5C0C1926C2B0AB00F2ADB5 /* Assets.xcassets */,
+				9E5C0C1B26C2B0AB00F2ADB5 /* LaunchScreen.storyboard */,
+				9E5C0C1E26C2B0AB00F2ADB5 /* Info.plist */,
 			);
-			path = enumsUITests;
+			name = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,24 +148,6 @@
 			productReference = 9E5C0C2326C2B0AB00F2ADB5 /* enumsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9E5C0C2D26C2B0AB00F2ADB5 /* enumsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9E5C0C3D26C2B0AB00F2ADB5 /* Build configuration list for PBXNativeTarget "enumsUITests" */;
-			buildPhases = (
-				9E5C0C2A26C2B0AB00F2ADB5 /* Sources */,
-				9E5C0C2B26C2B0AB00F2ADB5 /* Frameworks */,
-				9E5C0C2C26C2B0AB00F2ADB5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9E5C0C3026C2B0AB00F2ADB5 /* PBXTargetDependency */,
-			);
-			name = enumsUITests;
-			productName = enumsUITests;
-			productReference = 9E5C0C2E26C2B0AB00F2ADB5 /* enumsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +161,6 @@
 						CreatedOnToolsVersion = 12.5;
 					};
 					9E5C0C2226C2B0AB00F2ADB5 = {
-						CreatedOnToolsVersion = 12.5;
-						TestTargetID = 9E5C0C0C26C2B0AA00F2ADB5;
-					};
-					9E5C0C2D26C2B0AB00F2ADB5 = {
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = 9E5C0C0C26C2B0AA00F2ADB5;
 					};
@@ -221,7 +181,6 @@
 			targets = (
 				9E5C0C0C26C2B0AA00F2ADB5 /* enums */,
 				9E5C0C2226C2B0AB00F2ADB5 /* enumsTests */,
-				9E5C0C2D26C2B0AB00F2ADB5 /* enumsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -244,13 +203,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E5C0C2C26C2B0AB00F2ADB5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -261,6 +213,7 @@
 				9E5C0C1526C2B0AA00F2ADB5 /* ViewController.swift in Sources */,
 				9E5C0C1126C2B0AA00F2ADB5 /* AppDelegate.swift in Sources */,
 				9E5C0C1326C2B0AA00F2ADB5 /* SceneDelegate.swift in Sources */,
+				9E5C0C4226C2B0DA00F2ADB5 /* TemperatureScale.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,14 +225,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E5C0C2A26C2B0AB00F2ADB5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9E5C0C3326C2B0AB00F2ADB5 /* enumsUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -287,11 +232,6 @@
 			isa = PBXTargetDependency;
 			target = 9E5C0C0C26C2B0AA00F2ADB5 /* enums */;
 			targetProxy = 9E5C0C2426C2B0AB00F2ADB5 /* PBXContainerItemProxy */;
-		};
-		9E5C0C3026C2B0AB00F2ADB5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9E5C0C0C26C2B0AA00F2ADB5 /* enums */;
-			targetProxy = 9E5C0C2F26C2B0AB00F2ADB5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,44 +449,6 @@
 			};
 			name = Release;
 		};
-		9E5C0C3E26C2B0AB00F2ADB5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = enumsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lukeRave.enumsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = enums;
-			};
-			name = Debug;
-		};
-		9E5C0C3F26C2B0AB00F2ADB5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = enumsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = lukeRave.enumsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = enums;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,15 +475,6 @@
 			buildConfigurations = (
 				9E5C0C3B26C2B0AB00F2ADB5 /* Debug */,
 				9E5C0C3C26C2B0AB00F2ADB5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9E5C0C3D26C2B0AB00F2ADB5 /* Build configuration list for PBXNativeTarget "enumsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9E5C0C3E26C2B0AB00F2ADB5 /* Debug */,
-				9E5C0C3F26C2B0AB00F2ADB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
