@@ -22,16 +22,9 @@ struct Tester {
     
     /// Find the nums that exist in both arrays
     func findCommonNums(from firstNums: [Int], and secondNums: [Int]) -> [Int] {
+        let firstSet: Set<Int> = Set(firstNums)
         
-        var firstSet: Set<Int> = []
-        for num in firstNums {
-            firstSet.insert(num)
-        }
-        
-        var secondSet: Set<Int> = []
-        for num in secondNums {
-            secondSet.insert(num)
-        }
+        let secondSet: Set<Int> = Set(secondNums)
         
         let commonNums: Set<Int> = firstSet.intersection(secondSet)
         let commonNumArray: [Int] = Array(commonNums)
@@ -41,15 +34,9 @@ struct Tester {
     
     /// first: "hello", second: "bye" -> ["e"]
     func findMatchingLetters(firstWord: String, secondWord: String) -> [Character] {
-        var firstSet: Set<Character> = []
-        for char in firstWord {
-            firstSet.insert(char)
-        }
+        let firstSet: Set<Character> = Set(firstWord)
         
-        var secondSet: Set<Character> = []
-        for char in secondWord {
-            secondSet.insert(char)
-        }
+        let secondSet: Set<Character> = Set(secondWord)
         
         let matchingLetters = firstSet.intersection(secondSet)
         let matchingLetterArray = Array(matchingLetters)
@@ -111,26 +98,16 @@ struct Tester {
      [1, 4, 8, 1] -> [1, 2, 3, 1]
      */
     func reduceDistanceKeepPriority(array: [Int]) -> [Int] {
-        let sorted: [Int] = array.sorted()
+        let sorted: [Int] = Array(Set(array)).sorted()
         let priority: Int = array.min() ?? 0
         
         var dict: [Int: Int] = [:]
 
-        if priority != 1 {
-            for (index, ele) in sorted.enumerated() {
-                if ele == priority {
-                    dict[ele] = 1
-            } else {
-                dict[ele] = index + 1
-                }
-            }
+        for (index, ele) in sorted.enumerated() {
+            if ele == priority {
+                dict[ele] = 1
         } else {
-            for (index, ele) in array.enumerated() {
-                if ele == priority {
-                    dict[ele] = 1
-                } else {
-                    dict[ele] = index + 1
-                }
+            dict[ele] = index + 1
             }
         }
         

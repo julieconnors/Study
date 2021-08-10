@@ -72,7 +72,8 @@ class ViewController: UIViewController {
         setupTasks()
         setupTeam()
         myTeam.startWeek()
-        
+//        myTeam.allTasksCompleted()
+
         if myTeam.allTasksCompleted() {
             myTeam.printMoney()
         }
@@ -82,7 +83,7 @@ class ViewController: UIViewController {
 //        let iOSTask     = Task(timeReq: 20,
 //                               roleReq: .iOSDeveloper)
 //        let androidTask = Task(timeReq: 30,
-//                               roleReq: .Architech)
+//                               roleReq: .AndroidDeveloper)
 //
 //        myTeam.add(task: iOSTask)
 //        myTeam.add(task: androidTask)
