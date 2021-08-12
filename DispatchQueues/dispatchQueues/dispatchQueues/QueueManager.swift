@@ -13,6 +13,7 @@ class QueueManager {
 2. Finish the rest of the functions
  - To test: make sure you have the same prints as the screenshots
 */
+    var serialQueue: DispatchQueue? = DispatchQueue(label: "serialLabel", attributes: .concurrent)
 
 /// See test cases: print 0 to end serially
     func printSerial(to end: Int) {
