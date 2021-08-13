@@ -43,6 +43,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabels()
+        var string = "aabbcc"
+        while string.isEmpty == false {
+            string.removeFirst()
+        }
     }
 
     func configureLabels() {
@@ -50,5 +54,7 @@ class ViewController: UIViewController {
         firstLabel.accessibilityIdentifier = "FirstLabel"
         secondLabel.text = ""
     }
+    
+    weak var luke: ViewController?
 }
 
