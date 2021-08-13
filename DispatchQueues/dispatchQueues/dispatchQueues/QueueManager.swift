@@ -17,39 +17,60 @@ class QueueManager {
 /// See test cases: print 0 to end serially
     func printSerial(to end: Int) {
         for num in 0...end {
-            /// Your code here
+            print(num)
         }
     }
     
 /// See test cases
     func printConcurrent(to end: Int) {
         for num in 0...end {
-            /// Your code here
+            DispatchQueue.global().async {
+                print(num)
+            }
         }
     }
     
 /// See screenshots: Problem 1
     func serialClosures(task: @escaping (Int) -> Void, numTimes: Int) {
         for num in 0...numTimes {
-        /// Your code here
+                print("Serial Start:", num)
+                print("from closure: serial")
         }
     }
     
 /// See screenshots: Problem 2
     func concurrentClosures(task: @escaping (Int) -> Void, numTimes: Int) {
+        let cQueue = DispatchQueue(label: "concurrentLabel", attributes: .concurrent)
+
         for num in 0...numTimes {
-        /// Your code here
+            cQueue.async {
+                print("Concurrent Start:", num)
+                print("from closure: concurrent")
+            }
         }
     }
+    let group = DispatchGroup()
 
 /// See screenshots: Problem 3 and 4
     func execute(closure: @escaping (DispatchGroup?) -> Void, queueType: QueueType) {
+        let group = DispatchGroup()
+     
+        if queueType == .serial {
+            DispatchQueue.main.async {
+                closure(group)
+            }
+            
+        } else if queueType == .concurrent {
+            DispatchQueue.global().async {
+                closure(group)
+            }
+        }
         
     }
     
 ///  See screenshots: Problem 3 and 4, print GROUP end only after both tasks are done
     func addGroupCompletion() {
-        
+        print("GROUP end")
     }
     
 }

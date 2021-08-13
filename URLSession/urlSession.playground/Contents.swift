@@ -21,7 +21,7 @@ func mappingToStruct(data: Data?) {
 if let url = URL(string: address) {
     print("creating task")
     let task = URLSession.shared.dataTask(with: url, completionHandler:{ (data, response, error) in
-        
+
         guard let data = data, error == nil else {
             print("Data is empty, network error: \(error)")
             return
@@ -31,20 +31,21 @@ if let url = URL(string: address) {
             print("Error: status code is not 200")
             return
         }
-        
+
         mappingToStruct(data: data)
     })
     task.resume()
 }
 struct HackerNews: Codable {
-    
+
     enum CodingKeys: String, CodingKey {
         case authorName = "author"
         case id = "id"
         case title = "title"
     }
-    
+
     let id: Int
     let authorName: String
     let title: String
 }
+

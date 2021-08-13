@@ -62,12 +62,11 @@ class ViewController: UIViewController {
 
 
 /// Problem 4:
-//        print("Executing in CONCURRENT. Long task first:")
-//        queueManager.execute(closure: longTaskGroup, queueType: .concurrent)
-//        queueManager.execute(closure: shortTaskGroup, queueType: .concurrent)
+        print("Executing in CONCURRENT. Long task first:")
+        queueManager.execute(closure: longTaskGroup, queueType: .concurrent)
+        queueManager.execute(closure: shortTaskGroup, queueType: .concurrent)
 //        queueManager.addGroupCompletion()
 
     }
-
 }
 
