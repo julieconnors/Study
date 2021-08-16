@@ -58,11 +58,13 @@ class QueueManager {
      
         if queueType == .serial {
             DispatchQueue.main.async {
+                group.enter()
                 closure(group)
             }
             
         } else if queueType == .concurrent {
             DispatchQueue.global().async {
+                group.enter()
                 closure(group)
             }
         }
