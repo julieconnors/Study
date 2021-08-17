@@ -34,8 +34,8 @@ class QueueManager {
 /// See screenshots: Problem 1
     func serialClosures(task: @escaping (Int) -> Void, numTimes: Int) {
         for num in 0...numTimes {
-                print("Serial Start:", num)
-                print("from closure: serial")
+            print("Serial Start:", num)
+            print("from closure: serial")
         }
     }
     
@@ -50,32 +50,31 @@ class QueueManager {
             }
         }
     }
-    let group = DispatchGroup()
 
+    let group = DispatchGroup()
 /// See screenshots: Problem 3 and 4
     func execute(closure: @escaping (DispatchGroup?) -> Void, queueType: QueueType) {
-        let group = DispatchGroup()
-     
+            
         if queueType == .serial {
             DispatchQueue.main.async {
-                group.enter()
-                closure(group)
+                self.group.enter()
+                closure(self.group)
             }
-            
+
         } else if queueType == .concurrent {
+            self.group.enter()
             DispatchQueue.global().async {
-                group.enter()
-                closure(group)
+                closure(self.group)
             }
         }
-        
     }
     
 ///  See screenshots: Problem 3 and 4, print GROUP end only after both tasks are done
     func addGroupCompletion() {
-        print("GROUP end")
+        group.notify(queue: DispatchQueue.global()) {
+            print("Group end")
+        }
     }
-    
 }
 
 enum QueueType {
