@@ -71,6 +71,7 @@ class ViewController: UIViewController {
     /// Show the name of the first episode
     @IBAction func tvShowsPressed(_ sender: UIButton) {
         firstLabel.text = "Testing TVShows button"
+<<<<<<< HEAD:URLSession/apiCalls/apiCalls/ViewController.swift
         
         let decoder = JSONDecoder()
 
@@ -88,6 +89,9 @@ class ViewController: UIViewController {
         })
             task.resume()
         }
+=======
+        decoding()
+>>>>>>> d07149633ac98c7e08808e6699abe195fb2d23d1:09URLSession/apiCalls/apiCalls/ViewController.swift
 
     }
     
@@ -149,5 +153,38 @@ class ViewController: UIViewController {
     }
     
     weak var luke: ViewController?
+    
+    func testing() {
+        let ituneOne = iTune(feed: SomeObject(title: "", results: [SomeOtherObject(artistName: "asdf")]))
+        
+        ituneOne.feed.results.first?.artistName
+    }
+    
+    func decoding() {
+        let data = Data()
+        do {
+            let decodedShowsArray = try JSONDecoder().decode([Show].self, from: data)
+        } catch {
+            print(error)
+        }
+    }
+    
 }
 
+struct Show: Decodable {
+    let id: Int?
+    let name: String?
+}
+
+struct iTune: Encodable & Decodable {
+    let feed: SomeObject
+}
+
+struct SomeObject: Codable {
+    let title: String?
+    let results: [SomeOtherObject]
+}
+
+struct SomeOtherObject: Codable {
+    let artistName: String?
+}
