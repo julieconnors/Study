@@ -9,7 +9,7 @@ import UIKit
 
 class MyTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var episodeName: UILabel!
-    
-    @IBOutlet weak var airdate: UILabel!
+    @IBOutlet weak var name: UILabel!
+
+    @IBOutlet weak var sectionRow: UILabel!
 }
