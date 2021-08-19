@@ -9,12 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dataFromThird: UILabel!
     @IBAction func thirdButtonAction(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let thirdVC = sb.instantiateViewController(withIdentifier: "ThirdVC") as? ThirdViewController else {
             return
         }
-        thirdVC.name = "Third VC"
+//        thirdVC.name = "Passing From First"
+        thirdVC.getData(string: "Passing using func")
+        thirdVC.closure = { str in
+            print("Code from first VC", str)
+            self.dataFromThird.text = str
+        }
+        
         navigationController?.pushViewController(thirdVC, animated: true)
     }
     
@@ -29,7 +36,8 @@ class ViewController: UIViewController {
             "here",
             "is",
             "the",
-            "data"
+            "data",
+            dataFromThird.text ?? ""
         ]
     }
 }

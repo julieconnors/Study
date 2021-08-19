@@ -10,23 +10,29 @@ import UIKit
 class ThirdViewController: UIViewController {
 
     var name: String = ""
+    var closure: (String) -> Void = {_ in}
+    
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        print("button pressed")
+        let inputStr = textField.text ?? ""
+        
+        closure(inputStr)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("loading view at Third VC")
         print("name: \(name)")
+        nameLabel.text = name
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getData(string: String) {
+//        nameLabel.text = string
+        self.name = string
     }
-    */
-
 }
