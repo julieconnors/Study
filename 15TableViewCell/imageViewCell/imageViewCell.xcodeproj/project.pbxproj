@@ -15,6 +15,8 @@
 		8D3C85E726D02E09009D0D8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C85E526D02E09009D0D8D /* LaunchScreen.storyboard */; };
 		8D3C85F026D031AF009D0D8D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C85EE26D031AF009D0D8D /* TableViewCell.swift */; };
 		8D3C85F126D031AF009D0D8D /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3C85EF26D031AF009D0D8D /* TableViewCell.xib */; };
+		8D3C85F526D2830F009D0D8D /* DrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C85F426D2830F009D0D8D /* DrinkViewController.swift */; };
+		8D3C85F726D28CF0009D0D8D /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3C85F626D28CF0009D0D8D /* ShowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		8D3C85E826D02E09009D0D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D3C85EE26D031AF009D0D8D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8D3C85EF26D031AF009D0D8D /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		8D3C85F426D2830F009D0D8D /* DrinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkViewController.swift; sourceTree = "<group>"; };
+		8D3C85F626D28CF0009D0D8D /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				8D3C85EE26D031AF009D0D8D /* TableViewCell.swift */,
 				8D3C85EF26D031AF009D0D8D /* TableViewCell.xib */,
 				8D3C85E026D02E08009D0D8D /* Main.storyboard */,
+				8D3C85F626D28CF0009D0D8D /* ShowViewController.swift */,
+				8D3C85F426D2830F009D0D8D /* DrinkViewController.swift */,
 				8D3C85E326D02E09009D0D8D /* Assets.xcassets */,
 				8D3C85E526D02E09009D0D8D /* LaunchScreen.storyboard */,
 				8D3C85E826D02E09009D0D8D /* Info.plist */,
@@ -148,6 +154,8 @@
 				8D3C85F026D031AF009D0D8D /* TableViewCell.swift in Sources */,
 				8D3C85DB26D02E08009D0D8D /* AppDelegate.swift in Sources */,
 				8D3C85DD26D02E08009D0D8D /* SceneDelegate.swift in Sources */,
+				8D3C85F526D2830F009D0D8D /* DrinkViewController.swift in Sources */,
+				8D3C85F726D28CF0009D0D8D /* ShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
