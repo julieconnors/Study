@@ -10,7 +10,7 @@ import UIKit
 protocol DisplayNameAndImage: Decodable {
     var title: String { get }
     var image: String { get }
-//    var type: DisplayType { get set }
+    var type: DisplayType { get set }
 }
 
 enum DisplayType: Int, Decodable {
@@ -25,8 +25,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     let tvShowsStr = "https://api.tvmaze.com/shows/431/episodes"
     
     var dataArray: [[DisplayNameAndImage]] = []
-    var drinkArray: [Drink] = []
-    var showArray: [ShowNameAndImage] = []
+    var drinkArray: [DrinkDisplayInfo] = []
+    var showArray: [ShowDisplayInfo] = []
     
     let group = DispatchGroup()
     
@@ -61,9 +61,8 @@ class ViewController: UIViewController, UITableViewDataSource {
             if let drinksDecoded = try? JSONDecoder().decode(Drinks.self, from: data) {
                 
                 for drink in drinksDecoded.drinks {
-                    self.drinkArray.append(drink)
+                    self.drinkArray.append(DrinkDisplayInfo(title: drink.strDrink, image: drink.strDrinkThumb, type: .drink))
                 }
-//                    print(self.drinkArray)
                 self.dataArray.append(self.drinkArray)
                 self.group.leave()
                 }
@@ -81,7 +80,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                 let decoded = try JSONDecoder().decode([Shows].self, from: data)
                 
                 for show in decoded {
-                    self.showArray.append(ShowNameAndImage(type: .show, title: show.name, image: show.image.medium))
+                    self.showArray.append(ShowDisplayInfo(title: show.name, image: show.image.medium, type: .show))
                 }
                 self.dataArray.append(self.showArray)
                 self.group.leave()
@@ -96,11 +95,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         var image: ShowImage
     }
     
-    struct ShowNameAndImage: DisplayNameAndImage {
-        var type: DisplayType
-        
+    struct ShowDisplayInfo: DisplayNameAndImage {
         var title: String
         var image: String
+        var type: DisplayType
     }
     
     struct ShowImage: Decodable {
@@ -112,30 +110,22 @@ class ViewController: UIViewController, UITableViewDataSource {
         var drinks: [Drink]
     }
     
-    struct Drink: DisplayNameAndImage {
-//        var type: DisplayType
+    struct DrinkDisplayInfo: DisplayNameAndImage {
+        var title: String
+        var image: String
+        var type: DisplayType
         
-//        mutating func setType() {
-//            type = .drink
-//        }
-//
+    }
+    
+    struct Drink: Decodable {
         let strDrink: String
         let strDrinkThumb: String
-        
-        var title: String {
-            return strDrink
-        }
-        
-        var image: String {
-            return strDrinkThumb
-        }
     }
         
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0: return "Shows"
-        case 1: return "Drinks"
-        default: return "None"
+        switch self.dataArray[section][0].type {
+            case .show: return "Shows"
+            case .drink: return "Drinks"
         }
     }
     
