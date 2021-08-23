@@ -77,9 +77,9 @@
 		9EC836C726D3C47300E70BE7 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				9EC836C126D3C46E00E70BE7 /* Info.plist */,
 				9EC836BC26D3C46E00E70BE7 /* Assets.xcassets */,
 				9EC836BE26D3C46E00E70BE7 /* LaunchScreen.storyboard */,
-				9EC836C126D3C46E00E70BE7 /* Info.plist */,
 				9EC836B326D3C46B00E70BE7 /* AppDelegate.swift */,
 				9EC836B526D3C46B00E70BE7 /* SceneDelegate.swift */,
 			);
