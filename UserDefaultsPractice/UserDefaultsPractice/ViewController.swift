@@ -25,7 +25,8 @@ extension ViewController: UITextFieldDelegate {
         
         guard let input = textField.text else { fatalError() }
         
-        UserDefaults.standard.setValue(input, forKey: key)
+//        UserDefaults.standard.setValue(input, forKey: key)
+        saveInput(input: input)
 
         return true
     }
@@ -33,8 +34,20 @@ extension ViewController: UITextFieldDelegate {
 
 extension ViewController {
     func findLastInput() {
-        if let lastInput = UserDefaults.standard.value(forKey: key) {
-            myTextField.text = lastInput as? String
+//        if let lastInput = UserDefaults.standard.value(forKey: key) {
+//            myTextField.text = lastInput as? String
+//        }
+        
+        guard let lastInput: String = try? DiskStorage.readInput(fromKey: key) else { fatalError() }
+        
+        myTextField.text = lastInput
+    }
+    
+    func saveInput(input: String) {
+        do {
+            try DiskStorage.saveInput(withKey: key, value: input)
+        } catch {
+            print("Cannot save input")
         }
     }
 }
