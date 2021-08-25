@@ -19,6 +19,7 @@
 		8DD58E7926D5658D00ED4ED3 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD58E7826D5658D00ED4ED3 /* EpisodeViewController.swift */; };
 		8DD58E7C26D57A4900ED4ED3 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD58E7B26D57A4900ED4ED3 /* Episode.swift */; };
 		8DD58E8226D6A06C00ED4ED3 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD58E8126D6A06C00ED4ED3 /* FavoritesViewController.swift */; };
+		8DD58EA526D6CC0D00ED4ED3 /* DiskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD58EA426D6CC0D00ED4ED3 /* DiskManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8DD58E7826D5658D00ED4ED3 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		8DD58E7B26D57A4900ED4ED3 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		8DD58E8126D6A06C00ED4ED3 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8DD58EA426D6CC0D00ED4ED3 /* DiskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				8DD58E5E26D53FBC00ED4ED3 /* Main.storyboard */,
 				8DD58E6626D53FBD00ED4ED3 /* Info.plist */,
 				8DD58E6F26D5464800ED4ED3 /* Supporting */,
+				8DD58EA426D6CC0D00ED4ED3 /* DiskManager.swift */,
 			);
 			path = NavAndFav;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD58EA526D6CC0D00ED4ED3 /* DiskManager.swift in Sources */,
 				8DD58E7726D557F500ED4ED3 /* ImageCache.swift in Sources */,
 				8DD58E8226D6A06C00ED4ED3 /* FavoritesViewController.swift in Sources */,
 				8DD58E7C26D57A4900ED4ED3 /* Episode.swift in Sources */,
