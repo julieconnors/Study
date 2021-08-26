@@ -94,8 +94,8 @@
 		9EC836B226D3C46B00E70BE7 /* drinksCache */ = {
 			isa = PBXGroup;
 			children = (
-				9E5E6CBC26D578230006F840 /* DrinkFavList */,
 				9EC836B926D3C46C00E70BE7 /* Main.storyboard */,
+				9E5E6CBC26D578230006F840 /* DrinkFavList */,
 				9E5E6CB926D539BA0006F840 /* DrinkLanding */,
 				9E5E6CB826D539AE0006F840 /* DrinkDetails */,
 				9EC836D626D3ED8700E70BE7 /* ImageCache.swift */,
