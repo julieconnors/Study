@@ -11,6 +11,7 @@ class ViewController: UITableViewController {
 
 
     var dataArray: [[String]] = []
+    var serialQueue = DispatchQueue(label: "serial")
     let jokesStr = "https://api.chucknorris.io/jokes/random"
     let drinksStr = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin"
     let tvShowsStr = "https://api.tvmaze.com/shows/431/episodes"
@@ -34,18 +35,23 @@ class ViewController: UITableViewController {
         let url = URL(string: "https://api.chucknorris.io/jokes/random")!
         var jokesArr: [Joke] = []
         let group = DispatchGroup()
-        for _ in 0..<3 {
+        for num in 0..<3 {
             group.enter()
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                defer { group.leave() }
-                guard let data = data else { return }
-                do {
-                    let decoded = try JSONDecoder().decode(Joke.self, from: data)
-                    jokesArr.append(decoded)
-                } catch {
-                    print(error)
-                }
-            }.resume()
+            let dispatchWI = DispatchWorkItem() {
+                print("inside serial queue \(num)")
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    defer { group.leave() }
+                    print("competion dataTask \(num)")
+                    guard let data = data else { return }
+                    do {
+                        let decoded = try JSONDecoder().decode(Joke.self, from: data)
+                        jokesArr.append(decoded)
+                    } catch {
+                        print(error)
+                    }
+                }.resume()
+            }
+            serialQueue.async(execute: dispatchWI)
         }
         group.notify(queue: .main) {
             self.decodable.append(jokesArr)
@@ -61,7 +67,7 @@ class ViewController: UITableViewController {
             do {
                 let decoded = try JSONDecoder().decode([Show].self, from: data)
                 showsArr = decoded
-                print(showsArr)
+//                print(showsArr)
                 self.decodable.append(Array(showsArr[0...9]))
                 self.fetchDrinksData()
             } catch {
