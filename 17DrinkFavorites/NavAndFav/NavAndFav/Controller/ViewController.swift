@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         tableSetting()
         retrieveData()
     }
+    
     @IBAction func loadFavorites(_ sender: Any) {
         guard let favoriteVC = storyboard?.instantiateViewController(identifier: "FavoritesVC") as? FavoritesViewController else { return }
         
@@ -102,7 +103,7 @@ extension ViewController: UITableViewDataSourcePrefetching {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension ViewController: UITableViewDelegate { /// built in delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let episodeVC = storyboard?.instantiateViewController(identifier: "EpisodeVC") as? EpisodeViewController else { return }
         
