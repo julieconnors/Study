@@ -22,7 +22,7 @@ var estimateObservation: NSKeyValueObservation?
 
 estimateObservation = webView.observe(\.estimatedProgress, options: [.old, .new]) { webView, change in
     
-    print("observing estimated OLD progress:", change.oldValue ?? "no value")
+//    print("observing estimated OLD progress:", change.oldValue ?? "no value")
     print("observing estimated NEW progress:", change.newValue ?? "no value")
     
 }
@@ -41,7 +41,7 @@ webView.load(URLRequest(url: url))
 //}
 
 
-/// 3. Notification center
+/// 3. Notification center (NOT push notification)
 
 var loginName = Notification.Name("login")
 var loginSuccess = Notification(name: loginName)

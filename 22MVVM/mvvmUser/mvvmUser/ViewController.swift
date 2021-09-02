@@ -5,6 +5,11 @@
 //  Created by Luat on 6/14/21.
 //
 
+/// M V V M
+/// Model
+/// View
+/// VM: ViewModel
+/// C: Controller
 import UIKit
 
 class ViewController: UIViewController {
@@ -16,6 +21,12 @@ class ViewController: UIViewController {
     
     var userViewModel: UserViewModel!
     
+//    var dataArray = ["objc 1", "item 2"] {
+//        didSet {
+//            /// knows when the model changes
+//        }
+//    }
+         
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +43,8 @@ class ViewController: UIViewController {
     func setupVM() {
         userViewModel = UserViewModel()
         
-        let updateCompletion = { [weak self] in
-            guard let wself = self else { return }
-            wself.updateLabel()
+        let updateCompletion = {
+            self.updateLabel()
         }
         
         userViewModel.bind(completion: updateCompletion)
