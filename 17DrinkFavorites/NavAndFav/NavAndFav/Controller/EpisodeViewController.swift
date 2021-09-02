@@ -21,41 +21,18 @@ class EpisodeViewController: UIViewController {
     @IBOutlet weak var episodeSummary: UILabel!
     
     var row: Int = 0
-    var episode: Episode?
+    var episodeVM: EpisodeViewModel?
     var favoriteDelegate: FavoriteDelegate?
-    
-    var isFavorite: Bool {
-        get {
-            episode?.isFavorite ?? false
-        }
-        set {
-            episode?.isFavorite = newValue
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        episodeName.text = episode?.name
-        episodeImageView.image = ImageCache.shared.findImage(str: episode?.image.medium ?? "")
-        episodeSeason.text = "Season: \(episode?.season ?? 0)"
-        episodeSummary.text = formatSummary()
+        episodeName.text = episodeVM?.name
+        episodeImageView.image = ImageCache.shared.findImage(str: episodeVM?.image ?? "")
+        episodeSeason.text = episodeVM?.season
+        episodeSummary.text = episodeVM?.formatSummary
         
         checkStatus()
         addTapToHeartView()
-    }
-    
-    func formatSummary() -> String {
-        guard var summary = episode?.summary else { fatalError() }
-        let start = summary.startIndex
-        
-        for _ in 0...2 {
-            summary.remove(at: start)
-        }
-
-        for _ in 0...3 {
-            summary.removeLast()
-        }
-        return summary
     }
     
     func addTapToHeartView() {
@@ -65,16 +42,21 @@ class EpisodeViewController: UIViewController {
     }
         
     @objc func handleTap() {
-        isFavorite = !isFavorite
-
-        checkStatus()
-        
-        favoriteDelegate?.changeStatus(status: isFavorite, row: row)
+        if let isFav = episodeVM?.isFavorite {
+            episodeVM?.isFavorite = !isFav
+            
+            checkStatus()
+            
+            favoriteDelegate?.changeStatus(status: !isFav, row: row)
+        }
     }
     
     func checkStatus() {
-        let imageStr = isFavorite ? "heart.fill" : "heart"
-        heartImageView.image = UIImage(systemName: imageStr)
+        if let imageStr = episodeVM?.isFavorite {
+            let image = imageStr ? "heart.fill" : "heart"
+            
+            heartImageView.image = UIImage(systemName: image)
+        }
     }
 }
 

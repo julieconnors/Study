@@ -15,7 +15,7 @@ struct Episode: Decodable {
     
     let name: String
     let image: EpisodeImage
-    let summary: String
+    var summary: String
     let season: Int
     
     var isFavorite: Bool = false

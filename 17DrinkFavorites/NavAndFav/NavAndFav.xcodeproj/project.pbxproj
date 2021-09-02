@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D93D35126DFF5B200D7C03E /* EpisodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93D35026DFF5B200D7C03E /* EpisodeListViewModel.swift */; };
+		8D93D35A26E031DA00D7C03E /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D93D35926E031DA00D7C03E /* EpisodeViewModel.swift */; };
 		8DD58E5926D53FBC00ED4ED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD58E5826D53FBC00ED4ED3 /* AppDelegate.swift */; };
 		8DD58E5B26D53FBC00ED4ED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD58E5A26D53FBC00ED4ED3 /* SceneDelegate.swift */; };
 		8DD58E5D26D53FBC00ED4ED3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD58E5C26D53FBC00ED4ED3 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D93D35026DFF5B200D7C03E /* EpisodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewModel.swift; sourceTree = "<group>"; };
+		8D93D35926E031DA00D7C03E /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
 		8DD58E5526D53FBC00ED4ED3 /* NavAndFav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavAndFav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD58E5826D53FBC00ED4ED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DD58E5A26D53FBC00ED4ED3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D93D35826E0313800D7C03E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8D93D35026DFF5B200D7C03E /* EpisodeListViewModel.swift */,
+				8D93D35926E031DA00D7C03E /* EpisodeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8DD58E4C26D53FBC00ED4ED3 = {
 			isa = PBXGroup;
 			children = (
@@ -70,8 +83,7 @@
 		8DD58E5726D53FBC00ED4ED3 /* NavAndFav */ = {
 			isa = PBXGroup;
 			children = (
-				8DD58E8326D6B9FD00ED4ED3 /* Favorites */,
-				8DD58E7A26D56BB900ED4ED3 /* EpisodeDetails */,
+				8D93D35826E0313800D7C03E /* ViewModels */,
 				8DD58E6E26D5463C00ED4ED3 /* Controller */,
 				8DD58E6D26D5463500ED4ED3 /* View */,
 				8DD58E6C26D5462B00ED4ED3 /* Model */,
@@ -104,6 +116,8 @@
 		8DD58E6E26D5463C00ED4ED3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8DD58E8126D6A06C00ED4ED3 /* FavoritesViewController.swift */,
+				8DD58E7826D5658D00ED4ED3 /* EpisodeViewController.swift */,
 				8DD58E5C26D53FBC00ED4ED3 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -118,22 +132,6 @@
 				8DD58E6126D53FBD00ED4ED3 /* Assets.xcassets */,
 			);
 			path = Supporting;
-			sourceTree = "<group>";
-		};
-		8DD58E7A26D56BB900ED4ED3 /* EpisodeDetails */ = {
-			isa = PBXGroup;
-			children = (
-				8DD58E7826D5658D00ED4ED3 /* EpisodeViewController.swift */,
-			);
-			path = EpisodeDetails;
-			sourceTree = "<group>";
-		};
-		8DD58E8326D6B9FD00ED4ED3 /* Favorites */ = {
-			isa = PBXGroup;
-			children = (
-				8DD58E8126D6A06C00ED4ED3 /* FavoritesViewController.swift */,
-			);
-			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,8 +205,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D93D35126DFF5B200D7C03E /* EpisodeListViewModel.swift in Sources */,
 				8DD58EA526D6CC0D00ED4ED3 /* DiskManager.swift in Sources */,
 				8DD58E7726D557F500ED4ED3 /* ImageCache.swift in Sources */,
+				8D93D35A26E031DA00D7C03E /* EpisodeViewModel.swift in Sources */,
 				8DD58E8226D6A06C00ED4ED3 /* FavoritesViewController.swift in Sources */,
 				8DD58E7C26D57A4900ED4ED3 /* Episode.swift in Sources */,
 				8DD58E5D26D53FBC00ED4ED3 /* ViewController.swift in Sources */,
