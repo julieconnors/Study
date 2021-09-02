@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  mvvmCollection
+//  firebaseServices
 //
 //  Created by Luat on 9/2/21.
 //
